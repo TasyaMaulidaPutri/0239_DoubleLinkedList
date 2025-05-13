@@ -158,6 +158,27 @@ bool listEmpty()
 
 }
 
+// prosedur traverse untuk menampilkan data secara urut
+void traverse()
+{
+    if (listEmpty())
+        cout << "nList is emoty " << endl;
+    else
+    {
+        cout << "\nRecords in descending order of roll number are: " << endl;
+        Node *currentNode = START;
+        while (currentNode != NULL)
+            currentNode = currentNode->next;
+        while (currentNode != NULL)
+        {
+            cout << currentNode->noMhs << " " << currentNode->name << endl;
+            currentNode = currentNode->prev;
+        }
+    }
+}
+
+
+    
 
 
         
