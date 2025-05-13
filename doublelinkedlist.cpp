@@ -219,7 +219,7 @@ void searchData()
     }
 }
 
-int mian()
+int main()
 {
     // perulangan selama bernilai benar untuk program utama double LinkedList
     while(true)
