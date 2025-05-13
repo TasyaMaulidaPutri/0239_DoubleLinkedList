@@ -55,4 +55,13 @@ void addNode()
         Node *current = START; // step 1.a: start from the fisrt node
         Node *previous = NULL; // step 1.b: previous node is Null initially
 
+        // Looping selama curremt != null dan noMhs dari current lebih kecil dari
+        while (current != NULL && current->noMhs < newNode->noMhs)
+        {                        // step 1.c: traverse the list to find the     
+            previous = current; // step 1.d: move the previous to the current
+            current = current->next; // step 1.e: move the current to next
+        }
+        
+    
+
         
