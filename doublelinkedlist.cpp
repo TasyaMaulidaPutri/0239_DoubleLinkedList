@@ -158,17 +158,37 @@ bool listEmpty()
 
 }
 
-// prosedur traverse untuk menampilkan data secara urut
+// prosedur traverse untuk menampilkan data secara urut 
 void traverse()
 {
     if (listEmpty())
-        cout << "nList is emoty " << endl;
+        cout << "\nList is Empty " << endl;
+  
     else
     {
-        cout << "\nRecords in descending order of roll number are: " << endl;
+        cout << "\nData didalam list adalah :\n";
         Node *currentNode = START;
         while (currentNode != NULL)
+        {
+            cout << currentNode->noMhs << endl;
             currentNode = currentNode->next;
+        }
+        cout << endl;
+    }
+}
+
+// prosedur untuk menampilkan data secara urutan terbalik
+void revtraverse()
+{
+    if (listEmpty())
+        cout << "\nList is Empty " << endl;
+    else
+    {
+        cout << "\nRecords in descending order of roll number are : " << endl;
+        Node *currentNode = START;
+        while (currentNode->next != NULL)
+            currentNode = currentNode->next;
+        
         while (currentNode != NULL)
         {
             cout << currentNode->noMhs << " " << currentNode->name << endl;
@@ -199,6 +219,59 @@ void searchData()
     }
 }
 
+int mian()
+{
+    // perulangan selama bernilai benar untuk program utama double LinkedList
+    while(true)
+    {
+        try
+        {
+            cout << endl
+             << "Menu";
+        cout << endl
+             << "1. Menambah data kedalam list" << endl;
+        cout << "2. Menghapus data dari dalam list" << endl;
+        cout << "3. Menampilkan semua data didalam list" << endl;
+        cout << "4. View all records in the descending order of roll numbers " <<endl;
+        cout << "5. Mencari data dalam list" << endl;
+        cout << "6. Keluar" << endl;
+        cout << endl
+             << "Masukkan pilihan (1-6): ";
+        char ch;
+        cin >> ch;    
+        switch (ch)
+        {
+            case '1' :
+                addNode();
+                break;
+            case '2':
+                deleteNode();
+                break;
+            case '3':
+                traverse();
+                break;
+            case '4':
+                revtraverse();
+                break;
+            case '5':
+                searchData();
+                break;
+            case '6':
+                return 0;
+            default:
+                cout << "\nInvalid option" << endl;
+                break;
+
+        }
+
+        }
+        catch (exception &e)
+        {
+            cout << "Check for the values entered." << endl;
+        }
+        
+    }
+}
 
     
 
